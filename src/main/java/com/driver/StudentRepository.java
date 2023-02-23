@@ -21,6 +21,7 @@ public class StudentRepository {
     }
 
     public void addStudent(Student student) {
+
         studentMap.put(student.getName(),student);
     }
 
@@ -59,7 +60,7 @@ public class StudentRepository {
         {
             if(tname.equals(name))
             {
-                teacherMap.get(name);
+                return teacherMap.get(name);
             }
         }
         return null;
