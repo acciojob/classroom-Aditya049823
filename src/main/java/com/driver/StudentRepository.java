@@ -10,15 +10,9 @@ import java.util.List;
 @Repository
 public class StudentRepository {
 
-    private HashMap<String,Student> studentMap;
-    private HashMap<String,Teacher> teacherMap;
-    private HashMap<String, List<String>>studentTeacherMap;
-
-    public StudentRepository() {
-        this.studentMap = new HashMap<>();
-        this.teacherMap = new HashMap<>();
-        this.studentTeacherMap = new HashMap<>();
-    }
+        HashMap<String,Student> studentMap= new HashMap<>();
+        HashMap<String,Teacher> teacherMap= new HashMap<>();
+        HashMap<String, List<String>>studentTeacherMap = new HashMap<>();
 
     public void addStudent(Student student) {
         studentMap.put(student.getName(),student);
