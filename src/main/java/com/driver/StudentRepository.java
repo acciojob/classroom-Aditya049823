@@ -21,7 +21,6 @@ public class StudentRepository {
     }
 
     public void addStudent(Student student) {
-
         studentMap.put(student.getName(),student);
     }
 
@@ -86,11 +85,11 @@ public class StudentRepository {
     }
 
     public void deleteTeacher(String teacher) {
-        List<String>list=new ArrayList<>();
+        List<String>deletelist=new ArrayList<>();
         if(studentTeacherMap.containsKey(teacher))
         {
-            list=studentTeacherMap.get(teacher);
-            for(String sname:list)
+            deletelist=studentTeacherMap.get(teacher);
+            for(String sname:deletelist)
             {
                 if(studentMap.containsKey(sname))
                 {
