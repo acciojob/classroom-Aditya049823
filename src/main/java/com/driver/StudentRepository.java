@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -104,6 +105,22 @@ public class StudentRepository {
     }
 
     public void deleteAllTeachers() {
-        teacherMap.clear();
+        teacherMap=new HashMap<>();
+        HashSet<String>studentSet=new HashSet<>();
+        for(String tname:studentTeacherMap.keySet())
+        {
+            for(String sname:studentTeacherMap.keySet())
+            {
+                studentSet.add(sname);
+            }
+        }
+        for(String sname:studentSet)
+        {
+            if(studentMap.containsKey(sname))
+            {
+                studentMap.remove(sname);
+            }
+        }
+        studentTeacherMap=new HashMap<>();
     }
 }
