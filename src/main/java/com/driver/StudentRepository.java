@@ -38,32 +38,18 @@ public class StudentRepository {
     }
 
     public Student getStudent(String name) {
-        for(String sname:studentMap.keySet())
-        {
-            if(sname.equals(name))
-            {
-                return studentMap.get(name);
-            }
-        }
-        return null;
+       return studentMap.get(name);
     }
 
     public Teacher getTeacher(String name) {
-        for(String tname:teacherMap.keySet())
-        {
-            if(tname.equals(name))
-            {
-                return teacherMap.get(name);
-            }
-        }
-        return null;
+        return teacherMap.get(name);
     }
 
     public List<String> getStudentNamethroughTeacher(String teacher) {
         List<String>sname=new ArrayList<>();
-        if(studentTeacherMap.containsKey(teacher))
+        for(String s:studentTeacherMap.keySet())
         {
-            return studentTeacherMap.get(teacher);
+            sname=studentTeacherMap.get(teacher);
         }
         return sname;
     }
